@@ -1,7 +1,13 @@
 
 <?php
 
-    require_once("./Alunno.php");
+    //require_once("./Alunno.php");
+
+    spl_autoload_register(function($class){
+
+        if(file_exists("./includes/$class.php"))
+            require_once ("./includes/$class.php");
+    });
 
     $a1 = new Alunno("mario", "rossi", 18);
     $a2 = new Alunno("piero", "rossi", 13);
